@@ -1,14 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom"
 import GenreDropdown from "./GenreDropdown";
 import Search from "./Search";
 
-function Navbar() {
+function NavBar() {
     return (
-        <>
-            <GenreDropdown />
-            <Search />
-        </>
+        <nav>
+            <NavLink to="/Search">Search</NavLink>
+            <NavLink to="/GenreDropdown">GenreDropdown</NavLink>
+        </nav>
     );
 }
 
-export default Navbar;
+export default NavBar;
+// function Navbar() {
+//     return (
+//         <>
+//             <GenreDropdown />
+//             <Search />
+//         </>
+//     );
+// }
