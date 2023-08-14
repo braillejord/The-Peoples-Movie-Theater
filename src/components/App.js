@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import AddMovie from "./AddMovie";
 import MainContent from "./MainContent";
-import Search from './components/Search';
 
 const baseUrl = "http://localhost:3000"
 const moviesUrl = baseUrl + '/movies'
