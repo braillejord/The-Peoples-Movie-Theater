@@ -29,11 +29,11 @@ function App() {
             setMovieList={setMovieList}
           />
         </Route>
-        <Route path="/selected-movie">
-          <SelectedMovie />
-        </Route>
         <Route path="/order-details">
           <Order />
+        </Route>
+        <Route path="/:id">
+          <SelectedMovie />
         </Route>
         <Route exact path="/">
           <MainContent movies={movieList} />
