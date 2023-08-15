@@ -10,6 +10,7 @@ function NavBar() {
             <NavLink exact to="/GenreDropdown">GenreDropdown</NavLink> */}
             <NavLink exact to="/">Home</NavLink>
             <NavLink exact to="/add-movie">Add a Movie</NavLink>
+            <NavLink exact to="/order-details">Your Order</NavLink>
         </nav>
     );
 }

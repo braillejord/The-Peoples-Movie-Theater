@@ -1,7 +1,5 @@
 import React from "react";
 import SingleMovie from "./SingleMovie";
-import SelectedMovie from "./SelectedMovie";
-import Order from "./Order";
 
 function MainContent({ movies }) {
 
@@ -17,8 +15,7 @@ function MainContent({ movies }) {
             <div className="ui centered grid">
                 {allMovies}
             </ div>
-            <SelectedMovie />
-            <Order />
+
         </>
     );
 }

@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import AddMovie from "./AddMovie";
 import MainContent from "./MainContent";
+import SelectedMovie from "./SelectedMovie";
+import Order from "./Order";
 
 const baseUrl = "http://localhost:3000"
 const moviesUrl = baseUrl + '/movies'
@@ -26,6 +28,12 @@ function App() {
             moviesUrl={moviesUrl}
             setMovieList={setMovieList}
           />
+        </Route>
+        <Route path="/selected-movie">
+          <SelectedMovie />
+        </Route>
+        <Route path="/order-details">
+          <Order />
         </Route>
         <Route exact path="/">
           <MainContent movies={movieList} />
