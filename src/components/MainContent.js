@@ -3,10 +3,20 @@ import SingleMovie from "./SingleMovie";
 import SelectedMovie from "./SelectedMovie";
 import Order from "./Order";
 
-function MainContent() {
+function MainContent({ movies }) {
+
+    const allMovies = movies.map((movie) => (
+        <SingleMovie
+            key={movie.id}
+            {...movie}
+        />
+    ))
+
     return (
         <>
-            <SingleMovie />
+            <div className="ui centered grid">
+                {allMovies}
+            </ div>
             <SelectedMovie />
             <Order />
         </>
