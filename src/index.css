@@ -15,3 +15,13 @@ code {
 }
 
 /* CSS we have added */
+
+.singleMovie {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.ui.small.image {
+  padding: 1em 0;
+}

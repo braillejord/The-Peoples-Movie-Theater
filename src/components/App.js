@@ -13,13 +13,13 @@ function App() {
     fetch(moviesUrl)
       .then(r => r.json())
       .then(data => setMovieList(data))
-  })
+  }, [])
 
   return (
     <>
       <Navbar />
       <AddMovie />
-      <MainContent />
+      <MainContent movies={movieList} />
     </>
   );
 }
