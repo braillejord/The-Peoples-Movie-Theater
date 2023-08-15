@@ -1,10 +1,36 @@
 import React from "react";
 
-function AddMovie() {
+function AddMovie({ movies, moviesUrl, setMovieList }) {
+
+    function handleSubmitForm(e) {
+        e.preventDefault();
+        const newMovie = {
+            title: e.target[0].value,
+            image: e.target[1].value,
+            rating: e.target[2].value,
+            description: e.target[5].value,
+            genre: e.target[3].value,
+            ticketPrice: parseFloat(e.target[4].value)
+        }
+
+        fetch(moviesUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, body: JSON.stringify(newMovie)
+        })
+            .then(r => r.json())
+            .then(newMovie => setMovieList([...movies, newMovie]))
+
+        e.target.reset()
+    }
+
+
     return (
         <>
             <h1 className="ui center aligned block header">Add a Movie 🍿</h1>
-            <form className="ui container form">
+            <form className="ui container form" onSubmit={(e) => handleSubmitForm(e)}>
                 <div className="two fields">
                     <div className="required field">
                         <label>Movie Title</label>
