@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import AddMovie from "./AddMovie";
 import MainContent from "./MainContent";
@@ -18,8 +19,21 @@ function App() {
   return (
     <>
       <Navbar />
-      <AddMovie />
-      <MainContent movies={movieList} />
+      <Switch>
+        <Route path="/add-movie">
+          <AddMovie
+            movies={movieList}
+            moviesUrl={moviesUrl}
+            setMovieList={setMovieList}
+          />
+        </Route>
+        <Route exact path="/">
+          <MainContent movies={movieList} />
+        </Route>
+        <Route path="*">
+          <h1>404 Not Found</h1>
+        </Route>
+      </Switch>
     </>
   );
 }
