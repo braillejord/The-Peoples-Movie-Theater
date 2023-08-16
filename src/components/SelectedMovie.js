@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
     const [selected, setSelected] = useState({})
+    const [editOn, setEditOn] = useState(false)
+    const [newPrice, setNewPrice] = useState()
     const { id } = useParams()
 
     useEffect(() => {
@@ -22,6 +24,12 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
         e.target.reset()
     }
 
+    function handlePriceChange(e) {
+        console.log(newPrice)
+
+        // setEditOn(!editOn)
+    }
+
     return (
         <>
             <div className="ui two column grid container">
@@ -36,7 +44,24 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                         ? <p><strong>Genre: </strong>{selected.genre}</p>
                         : <p><strong>Genre: </strong></p>
                     }
-                    <p><strong>Ticket Price: </strong>${selected.ticketPrice}</p>
+                    {editOn
+                        ?
+                        <p>
+                            <label><strong>New Price: </strong></label>
+                            <div className="ui labeled input">
+                                <label for="amount" className="ui label">$</label>
+                                <input type="number" onChange={(e) => setNewPrice(e.target.value)} />
+                            </div>
+                            <br />
+                            <button className="ui mini labeled button" onClick={(e) => handlePriceChange(e)}>Submit Price</button>
+                        </p>
+                        :
+                        <p>
+                            <strong>Ticket Price: </strong>${selected.ticketPrice}
+                            <br />
+                            <button className="ui mini labeled button" onClick={() => setEditOn(!editOn)}>Edit Price</button>
+                        </p>
+                    }
                     <label><strong>Ticket Quantity: </strong></label>
                     <form className="ui form" onSubmit={(e) => submitOrderForm(e)}>
                         <div className="ui small input">
