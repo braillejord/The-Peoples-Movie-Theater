@@ -33,7 +33,9 @@ function App() {
           <Order />
         </Route>
         <Route path="/:id">
-          <SelectedMovie />
+          <SelectedMovie
+            moviesUrl={moviesUrl}
+          />
         </Route>
         <Route exact path="/">
           <MainContent movies={movieList} />
