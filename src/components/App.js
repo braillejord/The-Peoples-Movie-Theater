@@ -22,12 +22,7 @@ function App() {
 
   return (
     <>
-      <Navbar
-        movies={movieList}
-        setMovieList={setMovieList}
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-      />
+      <Navbar />
       <Switch>
         <Route path="/add-movie">
           <AddMovie
@@ -51,6 +46,9 @@ function App() {
         <Route exact path="/">
           <MainContent
             movies={movieList.filter((movie) => searchInput ? movie.title.toLowerCase().includes(searchInput.toLowerCase()) : true)}
+            setMovieList={setMovieList}
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
           />
         </Route>
         <Route path="*">

@@ -1,9 +1,8 @@
 import React from "react";
+import SecondaryNavbar from "./SecondaryNavbar";
 import SingleMovie from "./SingleMovie";
-import { Switch, Route } from "react-router-dom";
-import SelectedMovie from "./SelectedMovie";
 
-function MainContent({ movies }) {
+function MainContent({ movies, setMovieList, searchInput, setSearchInput }) {
 
     const allMovies = movies.map((movie) => (
         <SingleMovie
@@ -14,6 +13,12 @@ function MainContent({ movies }) {
 
     return (
         <>
+            <SecondaryNavbar
+                movies={movies}
+                setMovieList={setMovieList}
+                searchInput={searchInput}
+                setSearchInput={setSearchInput}
+            />
             <div className="ui centered grid">
                 {allMovies}
             </ div>
