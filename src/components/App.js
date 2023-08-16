@@ -11,6 +11,7 @@ const moviesUrl = baseUrl + '/movies'
 
 function App() {
   const [movieList, setMovieList] = useState([])
+  const [ticketOrder, setTicketOrder] = useState([])
 
   useEffect(() => {
     fetch(moviesUrl)
@@ -30,11 +31,15 @@ function App() {
           />
         </Route>
         <Route path="/order-details">
-          <Order />
+          <Order
+            ticketOrder={ticketOrder}
+          />
         </Route>
         <Route path="/:id">
           <SelectedMovie
             moviesUrl={moviesUrl}
+            ticketOrder={ticketOrder}
+            setTicketOrder={setTicketOrder}
           />
         </Route>
         <Route exact path="/">

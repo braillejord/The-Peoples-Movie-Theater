@@ -2,7 +2,7 @@ import React from "react";
 
 function AddMovie({ movies, moviesUrl, setMovieList }) {
 
-    function handleSubmitForm(e) {
+    function submitMovieForm(e) {
         e.preventDefault();
         const newMovie = {
             title: e.target[0].value,
@@ -26,11 +26,10 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
         e.target.reset()
     }
 
-
     return (
         <>
             <h1 className="ui center aligned block header">Add a Movie 🍿</h1>
-            <form className="ui container form" onSubmit={(e) => handleSubmitForm(e)}>
+            <form className="ui container form" onSubmit={(e) => submitMovieForm(e)}>
                 <div className="two fields">
                     <div className="required field">
                         <label>Movie Title</label>

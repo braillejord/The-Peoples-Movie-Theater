@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function SelectedMovie({ moviesUrl }) {
+function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
     const [selected, setSelected] = useState({})
     const { id } = useParams()
 
@@ -11,6 +11,16 @@ function SelectedMovie({ moviesUrl }) {
             .then(movieDetails => setSelected(movieDetails))
     }, [])
 
+    function submitOrderForm(e) {
+        e.preventDefault();
+        const ticketQuantity = e.target[0].value
+        const newTickets = {
+            title: parseInt(id),
+            quantity: parseInt(ticketQuantity)
+        }
+        setTicketOrder([...ticketOrder, newTickets])
+        e.target.reset()
+    }
 
     return (
         <>
@@ -28,15 +38,16 @@ function SelectedMovie({ moviesUrl }) {
                     }
                     <p><strong>Ticket Price: </strong>${selected.ticketPrice}</p>
                     <label><strong>Ticket Quantity: </strong></label>
-                    <form className="ui form">
-                        <div className="ui input">
+                    <form className="ui form" onSubmit={(e) => submitOrderForm(e)}>
+                        <div className="ui small input">
                             <input type="number" />
                         </div>
-                        <br />
-                        <button className="ui labeled icon button" onClick={() => console.log("Ouch")}>
-                            <i className="plus icon"></i>
-                            Add to Order
-                        </button>
+                        <div className="order-button-container">
+                            <button className="ui labeled icon button">
+                                <i className="plus icon"></i>
+                                Add to Order
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
