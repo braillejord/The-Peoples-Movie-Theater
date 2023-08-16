@@ -7,10 +7,14 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
     const [newPrice, setNewPrice] = useState()
     const { id } = useParams()
 
-    useEffect(() => {
+    function fetchMovie() {
         fetch(moviesUrl + "/" + id)
             .then(r => r.json())
             .then(movieDetails => setSelected(movieDetails))
+    }
+
+    useEffect(() => {
+        fetchMovie()
     }, [])
 
     function submitOrderForm(e) {
@@ -25,9 +29,18 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
     }
 
     function handlePriceChange(e) {
-        console.log(newPrice)
 
-        // setEditOn(!editOn)
+        fetch(moviesUrl + '/' + id, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, body: JSON.stringify({
+                ticketPrice: parseFloat(newPrice)
+            })
+        })
+            .then(fetchMovie)
+            .then(setEditOn(!editOn))
     }
 
     return (
@@ -50,7 +63,7 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             <label><strong>New Price: </strong></label>
                             <div className="ui labeled input">
                                 <label for="amount" className="ui label">$</label>
-                                <input type="number" onChange={(e) => setNewPrice(e.target.value)} />
+                                <input type="number" step="0.01" onChange={(e) => setNewPrice(e.target.value)} />
                             </div>
                             <br />
                             <button className="ui mini labeled button" onClick={(e) => handlePriceChange(e)}>Submit Price</button>
