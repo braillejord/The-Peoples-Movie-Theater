@@ -6,18 +6,28 @@ import Search from "./Search";
 function NavBar({ movies, setMovieList, searchInput, setSearchInput }) {
 
     return (
-        <nav>
-            <NavLink exact to="/">Home</NavLink>
-            <NavLink exact to="/add-movie">Add a Movie</NavLink>
-            <NavLink exact to="/order-details">Your Order</NavLink>
-            <GenreDropdown />
-            <Search
-                movies={movies}
-                setMovieList={setMovieList}
-                searchInput={searchInput}
-                setSearchInput={setSearchInput}
-            />
-        </nav>
+        <div class="ui menu">
+            <div class="header item">
+                <NavLink exact to="/">Home</NavLink>
+            </div>
+            <a class="item">
+                <NavLink exact to="/add-movie">Add a Movie</NavLink>
+            </a>
+            <a class="item">
+                <NavLink exact to="/order-details">Your Order</NavLink>
+            </a>
+            <a class="item">
+                <GenreDropdown />
+            </a>
+            <a class="item">
+                <Search
+                    movies={movies}
+                    setMovieList={setMovieList}
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                />
+            </a>
+        </div>
     );
 }
 
