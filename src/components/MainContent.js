@@ -1,19 +1,28 @@
 import React from "react";
+import SecondaryNavbar from "./SecondaryNavbar";
 import SingleMovie from "./SingleMovie";
-import { Switch, Route } from "react-router-dom";
-import SelectedMovie from "./SelectedMovie";
 
-function MainContent({ movies }) {
+function MainContent({ movies, setMovieList, searchInput, setSearchInput }) {
 
-    const allMovies = movies.map((movie) => (
+    let allMovies = movies.map((movie) => (
         <SingleMovie
             key={movie.id}
             {...movie}
         />
     ))
 
+    if (movies.length === 0) {
+        allMovies = <h1>No Results Found</h1>
+    }
+
     return (
         <>
+            <SecondaryNavbar
+                movies={movies}
+                setMovieList={setMovieList}
+                searchInput={searchInput}
+                setSearchInput={setSearchInput}
+            />
             <div className="ui centered grid">
                 {allMovies}
             </ div>
