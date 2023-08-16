@@ -4,12 +4,16 @@ import SingleMovie from "./SingleMovie";
 
 function MainContent({ movies, setMovieList, searchInput, setSearchInput }) {
 
-    const allMovies = movies.map((movie) => (
+    let allMovies = movies.map((movie) => (
         <SingleMovie
             key={movie.id}
             {...movie}
         />
     ))
+
+    if (movies.length === 0) {
+        allMovies = <h1>No Results Found</h1>
+    }
 
     return (
         <>
