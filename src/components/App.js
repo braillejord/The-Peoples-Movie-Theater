@@ -11,6 +11,7 @@ const moviesUrl = baseUrl + '/movies'
 
 function App() {
   const [movieList, setMovieList] = useState([])
+  const [searchInput, setSearchInput] = useState("")
   const [ticketOrder, setTicketOrder] = useState([])
 
   useEffect(() => {
@@ -21,7 +22,12 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        movies={movieList}
+        setMovieList={setMovieList}
+        searchInput={searchInput}
+        setSearchInput={setSearchInput}
+      />
       <Switch>
         <Route path="/add-movie">
           <AddMovie
@@ -43,7 +49,9 @@ function App() {
           />
         </Route>
         <Route exact path="/">
-          <MainContent movies={movieList} />
+          <MainContent
+            movies={movieList.filter((movie) => searchInput ? movie.title.toLowerCase().includes(searchInput.toLowerCase()) : true)}
+          />
         </Route>
         <Route path="*">
           <h1>404 Not Found</h1>

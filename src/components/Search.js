@@ -1,14 +1,14 @@
 import React from 'react';
 
-const Search = (props) => {
+function Search({ movies, setMovieList, searchInput, setSearchInput }) {
+
 	return (
-		<div className='col col-sm-4'>
-			<input
-				className='form-control'
-				value={props.value}
-				onChange={(event) => props.setSearchValue(event.target.value)}
-				placeholder='Type to search...'
-			></input>
+		<div className="ui search">
+			<div className="ui icon input">
+				<input className="prompt" type="text" placeholder="Search movies..." onChange={(e) => setSearchInput(e.target.value)} />
+				<i className="search icon"></i>
+			</div>
+			<div className="results"></div>
 		</div>
 	);
 };
