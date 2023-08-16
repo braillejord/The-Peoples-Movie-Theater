@@ -15,6 +15,9 @@ function NavBar() {
                 <a className="item">
                     <NavLink exact to="/order-details">My Order</NavLink>
                 </a>
+                <div className="right menu">
+                    <h1>The People's Movie Theater</h1>
+                </div>
             </div>
         </>
     );
