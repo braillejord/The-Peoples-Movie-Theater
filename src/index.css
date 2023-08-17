@@ -32,7 +32,7 @@ code {
   padding-top: 1em;
 }
 
-#root {
+body {
   /* background-color: #301934 !important; */
   background-image: url(https://media.istockphoto.com/id/1273929462/photo/purple-defocused-blurred-motion-abstract-background.webp?b=1&s=170667a&w=0&k=20&c=YbaYi00O7A07AVuFpvSH1-VjcVg37HduYExjsXW2ESM=) !important;
   background-repeat: no-repeat !important;
@@ -87,6 +87,10 @@ p.ticket-quantity {
 
 h1.title {
   font-size: xx-large;
-  font-family: 'Rye', cursive !important;
-  padding-right: 0.3em;
+  font-family: 'Rye', cursive;
+  padding: 0.1em 0.3em 0 0;
+}
+
+div.ui.two.column.grid.container {
+  height: 100% !important;
 }

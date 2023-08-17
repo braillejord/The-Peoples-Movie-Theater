@@ -70,7 +70,7 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
                     <label>Movie Description</label>
                     <textarea></textarea>
                 </div>
-                <button className="ui button" type="submit">Add Movie 🎥</button>
+                <button className="ui black button" type="submit">Add Movie</button>
             </form >
         </>
     );

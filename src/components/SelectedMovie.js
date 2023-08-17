@@ -81,7 +81,7 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             <input type="number" />
                         </div>
                         <div className="order-button-container">
-                            <button className="ui button">Add to Order 🎥</button>
+                            <button className="ui black button">Add to Order</button>
                         </div>
                     </form>
                 </div>
