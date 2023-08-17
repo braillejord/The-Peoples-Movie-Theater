@@ -5,15 +5,15 @@ function NavBar() {
 
     return (
         <>
-            <div className="ui menu">
+            <div id="menu" className="ui menu">
                 <div className="header item">
-                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink className="header-link" exact to="/">Home</NavLink>
                 </div>
                 <a className="item">
-                    <NavLink exact to="/add-movie">Add a Movie</NavLink>
+                    <NavLink className="header-link" exact to="/add-movie">Add a Movie</NavLink>
                 </a>
                 <a className="item">
-                    <NavLink exact to="/order-details">My Order</NavLink>
+                    <NavLink className="header-link" exact to="/order-details">My Order</NavLink>
                 </a>
                 <div className="right menu">
                     <h1>🎥 The People's Movie Theater 🎥</h1>

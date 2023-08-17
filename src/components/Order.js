@@ -6,7 +6,7 @@ function Order({ ticketOrder }) {
 
     return (
         <>
-            <h1 className="ui center aligned block header">My Order 🎟️</h1>
+            <h1 className="ui center aligned block header">My Order</h1>
             <div className="ui container">
 
             </div>

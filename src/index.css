@@ -24,7 +24,8 @@ code {
 }
 
 .ui.small.image {
-  padding: 1em 0;
+  margin: 1em 0;
+  max-height: 222px;
 }
 
 .order-button-container {
@@ -33,10 +34,6 @@ code {
 
 body {
   background-color: #301934 !important;
-}
-
-nav {
-  background-color: #fff !important;
 }
 
 html * {
@@ -51,4 +48,30 @@ button.ui.labeled.mini.button {
 
 label.ui.label {
   color: black !important;
+}
+
+.header-link {
+  color: black;
+}
+
+.header-link:hover {
+  color: white;
+}
+
+.no-results {
+  color: white;
+}
+
+img.ui.small.image:hover {
+  border-style: solid;
+  border-color: goldenrod;
+}
+
+.right.menu {
+  padding-top: 0.2em;
+  padding-right: 0.2em;
+}
+
+#menu {
+  background-color: goldenrod !important;
 }

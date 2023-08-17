@@ -6,13 +6,14 @@ function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreC
 
     let allMovies = movies.map((movie) => (
         <SingleMovie
+            className="single-movie"
             key={movie.id}
             {...movie}
         />
     ))
 
     if (movies.length === 0) {
-        allMovies = <h1>No Results Found</h1>
+        allMovies = <h1 className="no-results">No Results Found</h1>
     }
 
     return (
