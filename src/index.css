@@ -31,19 +31,24 @@ code {
   padding-top: 1em;
 }
 
-/* html * {
+body {
   background-color: #301934 !important;
-} */
-
-/* .item-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px;
-  border: 1px solid black;
 }
 
-.item-label {
-  font-weight: 600;
-  margin-right: 8px;
-} */
+nav {
+  background-color: #fff !important;
+}
+
+html * {
+  font-family: 'Bricolage Grotesque', sans-serif !important;
+}
+
+label,
+div.column,
+button.ui.labeled.mini.button {
+  color: white !important;
+}
+
+label.ui.label {
+  color: black !important;
+}
