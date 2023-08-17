@@ -16,7 +16,7 @@ function NavBar() {
                     <NavLink className="header-link" exact to="/order-details">My Order</NavLink>
                 </a>
                 <div className="right menu">
-                    <h1>🎥 The People's Movie Theater 🎥</h1>
+                    <h1 className="title">The People's Movie Theater</h1>
                 </div>
             </div>
         </>

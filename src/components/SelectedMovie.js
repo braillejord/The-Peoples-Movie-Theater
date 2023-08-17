@@ -75,7 +75,7 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             <button className="ui mini labeled button" onClick={() => setEditOn(!editOn)}>Edit Price</button>
                         </p>
                     }
-                    <label><strong>Ticket Quantity: </strong></label>
+                    <p className="ticket-quantity"><strong>Ticket Quantity: </strong></p>
                     <form className="ui form" onSubmit={(e) => submitOrderForm(e)}>
                         <div className="ui small input">
                             <input type="number" />
