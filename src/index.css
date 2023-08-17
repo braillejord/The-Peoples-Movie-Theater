@@ -40,7 +40,7 @@ code {
   background-size: cover !important;
 }
 
-html * {
+html *:not(h1.title) {
   font-family: 'Bricolage Grotesque', sans-serif !important;
 }
 
@@ -87,4 +87,6 @@ p.ticket-quantity {
 
 h1.title {
   font-size: xx-large;
+  font-family: 'Rye', cursive !important;
+  padding-right: 0.3em;
 }
