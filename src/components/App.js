@@ -12,6 +12,7 @@ const moviesUrl = baseUrl + '/movies'
 function App() {
   const [movieList, setMovieList] = useState([])
   const [searchInput, setSearchInput] = useState("")
+  const [genreChoice, setGenreChoice] = useState("All")
   const [ticketOrder, setTicketOrder] = useState([])
 
   useEffect(() => {
@@ -19,6 +20,14 @@ function App() {
       .then(r => r.json())
       .then(data => setMovieList(data))
   }, [])
+
+  let filteredMovies;
+
+  if (genreChoice === "All") {
+    filteredMovies = movieList
+  } else {
+    filteredMovies = movieList.filter((movie) => movie.genre === genreChoice)
+  }
 
   return (
     <>
@@ -45,10 +54,12 @@ function App() {
         </Route>
         <Route exact path="/">
           <MainContent
-            movies={movieList.filter((movie) => searchInput ? movie.title.toLowerCase().includes(searchInput.toLowerCase()) : true)}
+            movies={filteredMovies.filter((movie) => searchInput ? movie.title.toLowerCase().includes(searchInput.toLowerCase()) : true)}
             setMovieList={setMovieList}
             searchInput={searchInput}
             setSearchInput={setSearchInput}
+            genreChoice={genreChoice}
+            setGenreChoice={setGenreChoice}
           />
         </Route>
         <Route path="*">
