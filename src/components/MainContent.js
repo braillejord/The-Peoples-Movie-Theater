@@ -2,7 +2,7 @@ import React from "react";
 import SecondaryNavbar from "./SecondaryNavbar";
 import SingleMovie from "./SingleMovie";
 
-function MainContent({ movies, setMovieList, searchInput, setSearchInput }) {
+function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreChoice, setGenreChoice }) {
 
     let allMovies = movies.map((movie) => (
         <SingleMovie
@@ -22,6 +22,8 @@ function MainContent({ movies, setMovieList, searchInput, setSearchInput }) {
                 setMovieList={setMovieList}
                 searchInput={searchInput}
                 setSearchInput={setSearchInput}
+                genreChoice={genreChoice}
+                setGenreChoice={setGenreChoice}
             />
             <div className="ui centered grid">
                 {allMovies}

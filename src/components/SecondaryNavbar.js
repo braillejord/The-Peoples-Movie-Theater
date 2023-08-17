@@ -2,11 +2,16 @@ import React from "react";
 import GenreDropdown from "./GenreDropdown";
 import Search from "./Search";
 
-function SecondaryNavbar({ movies, setMovieList, searchInput, setSearchInput }) {
+function SecondaryNavbar({ movies, setMovieList, searchInput, setSearchInput, genreChoice, setGenreChoice }) {
     return (
         <div className="ui secondary menu">
             <a className="item">
-                <GenreDropdown />
+                <GenreDropdown
+                    movies={movies}
+                    setMovieList={setMovieList}
+                    genreChoice={genreChoice}
+                    setGenreChoice={setGenreChoice}
+                />
             </a>
             <div className="right menu">
                 <a className="item">
