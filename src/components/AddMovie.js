@@ -7,10 +7,11 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
         const newMovie = {
             title: e.target[0].value,
             image: e.target[1].value,
-            rating: e.target[2].value,
-            description: e.target[5].value,
-            genre: e.target[3].value,
-            ticketPrice: parseFloat(e.target[4].value)
+            rating: e.target[3].value,
+            description: e.target[6].value,
+            genre: e.target[4].value,
+            ticketPrice: parseFloat(e.target[5].value),
+            trailer: e.target[2].value
         }
 
         fetch(moviesUrl, {
@@ -30,7 +31,7 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
         <>
             <h1 className="ui center aligned block header">Add a Movie</h1>
             <form className="ui container form" onSubmit={(e) => submitMovieForm(e)}>
-                <div className="two fields">
+                <div className="three fields">
                     <div className="required field">
                         <label>Movie Title</label>
                         <input type="text" placeholder="Movie Title" />
@@ -38,6 +39,10 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
                     <div className="required field">
                         <label>Movie Image</label>
                         <input type="text" placeholder="Movie Image" />
+                    </div>
+                    <div className="required field">
+                        <label>Movie Trailer (Embed Url)</label>
+                        <input type="text" placeholder="https://www.youtube.com/embed/dQw4w9WgXcQ" />
                     </div>
                 </div>
                 <div className="three fields">
