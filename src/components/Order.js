@@ -39,9 +39,9 @@ function Order({ selected, ticketQuantity }) {
                     <h2>~ Concessions ~</h2>
                     <table className="ui yellow celled table">
                         <thead>
-                            <tr><th>Popcorn ($3.00)</th>
-                                <th>Candy ($2.00)</th>
-                                <th>Soda ($2.50)</th>
+                            <tr><th>Popcorn 🍿 ($3.00)</th>
+                                <th>Candy 🍫 ($2.00)</th>
+                                <th>Soda 🥤 ($2.50)</th>
                             </tr></thead>
                         <tbody>
                             <tr>
