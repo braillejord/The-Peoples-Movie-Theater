@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Order from "./Order";
 import Modal from 'react-modal';
 
-function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
+function SelectedMovie({ moviesUrl }) {
     const [selected, setSelected] = useState({})
     const [editOn, setEditOn] = useState(false)
     const [newPrice, setNewPrice] = useState()
+    const [ticketQuantity, setTicketQuantity] = useState(0)
     const { id } = useParams()
 
     function fetchMovie() {
@@ -20,12 +22,13 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
 
     function submitOrderForm(e) {
         e.preventDefault();
-        const ticketQuantity = e.target[0].value
-        const newTickets = {
-            title: parseInt(id),
-            quantity: parseInt(ticketQuantity)
-        }
-        setTicketOrder([...ticketOrder, newTickets])
+        const quantity = e.target[0].value
+        setTicketQuantity(quantity)
+        // const newTickets = {
+        //     title: parseInt(id),
+        //     quantity: parseInt(ticketQuantity)
+        // }
+        // setTicketOrder([...ticketOrder, newTickets])
         e.target.reset()
     }
 
@@ -124,6 +127,10 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                     </form>
                 </div>
             </div>
+            <Order
+                selected={selected}
+                ticketQuantity={ticketQuantity}
+            />
         </>
     );
 }
