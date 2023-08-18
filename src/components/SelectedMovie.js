@@ -47,7 +47,7 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
         <>
             <div className="ui two column grid container">
                 <div className="column">
-                    <img className="ui image" src={selected.image} />
+                    <img className="ui image selected-img" src={selected.image} />
                 </div>
                 <div className="column">
                     <h1>{selected.title}</h1>

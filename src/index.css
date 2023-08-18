@@ -28,6 +28,10 @@ code {
   max-height: 222px;
 }
 
+.image {
+  filter: drop-shadow(10px 10px 10px black);
+}
+
 .order-button-container {
   padding-top: 1em;
 }
@@ -93,4 +97,19 @@ h1.title {
 
 div.ui.two.column.grid.container {
   height: 100% !important;
+}
+
+h1.ui.center.aligned.header {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+h1.now-playing {
+  color: white;
+  margin-left: 1em;
+}
+
+.selected-img {
+  height: 50em;
 }

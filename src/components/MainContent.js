@@ -4,17 +4,6 @@ import SingleMovie from "./SingleMovie";
 
 function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreChoice, setGenreChoice }) {
 
-    let allMovies = movies.map((movie) => (
-        <SingleMovie
-            className="single-movie"
-            key={movie.id}
-            {...movie}
-        />
-    ))
-
-    if (movies.length === 0) {
-        allMovies = <h1 className="no-results">No Results Found</h1>
-    }
 
     return (
         <>
@@ -26,8 +15,17 @@ function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreC
                 genreChoice={genreChoice}
                 setGenreChoice={setGenreChoice}
             />
+            <h1 className="now-playing">Now Playing</h1>
             <div className="ui centered grid">
-                {allMovies}
+                {
+                    movies ? movies.map((movie) => (
+                        <SingleMovie
+                            className="single-movie"
+                            key={movie.id}
+                            {...movie}
+                        />
+                    )) : <h1 className="no-results">No Results Found</h1>
+                }
             </ div>
         </>
     );
