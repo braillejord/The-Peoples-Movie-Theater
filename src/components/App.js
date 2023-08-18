@@ -4,7 +4,6 @@ import Navbar from "./Navbar";
 import AddMovie from "./AddMovie";
 import MainContent from "./MainContent";
 import SelectedMovie from "./SelectedMovie";
-import Order from "./Order";
 
 const baseUrl = "http://localhost:3000"
 const moviesUrl = baseUrl + '/movies'
@@ -39,16 +38,9 @@ function App() {
             setMovieList={setMovieList}
           />
         </Route>
-        {/* <Route path="/order-details">
-          <Order
-            ticketOrder={ticketOrder}
-          />
-        </Route> */}
         <Route path="/:id">
           <SelectedMovie
             moviesUrl={moviesUrl}
-          // ticketOrder={ticketOrder}
-          // setTicketOrder={setTicketOrder}
           />
         </Route>
         <Route exact path="/">
@@ -68,37 +60,5 @@ function App() {
     </>
   );
 }
-
-// const App = () => {
-// 	const [movies, setMovies] = useState([]);
-// 	const [searchValue, setSearchValue] = useState('');
-
-// 	const getMovieRequest = async () => {
-// 		const moviesUrl = baseUrl + '/movies';
-
-// 		const response = await fetch(url);
-// 		const responseJson = await response.json();
-
-// 		if (responseJson.Search) {
-// 			setMovies(responseJson.Search);
-// 		}
-// 	};
-
-// 	useEffect(() => {
-// 		getMovieRequest();
-// 	}, []);
-
-// 	return (
-// 		<div className='container-fluid movie-app'>
-// 			<div className='row d-flex align-items-center mt-4 mb-4'>
-// 				<MovieListHeading heading='Movies' />
-// 				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-// 			</div>
-// 			<div className='row'>
-// 				<MovieList movies={movies} />
-// 			</div>
-// 		</div>
-// 	);
-// };
 
 export default App;

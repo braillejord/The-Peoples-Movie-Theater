@@ -22,7 +22,6 @@ function Order({ selected, ticketQuantity }) {
     function handleOrderSubmit(e) {
         e.preventDefault();
         setSeeThankYou(true);
-        console.log("Ouch")
     }
 
     return (
@@ -37,6 +36,7 @@ function Order({ selected, ticketQuantity }) {
                         <h3>Ticket Quantity: {ticketQuantity}</h3>
                     </div>
                     <h2>~ Concessions ~</h2>
+                    <p id="set-concessions">Concession price control coming soon!</p>
                     <table className="ui yellow celled table">
                         <thead>
                             <tr><th>Popcorn 🍿 ($3.00)</th>
@@ -126,72 +126,7 @@ function Order({ selected, ticketQuantity }) {
                             </tr>
                         </tbody>
                     </table>
-                    {/* <div>
-                        <h3>Popcorn</h3>
-                        <h4>Price: $3.00</h4>
-                        <h4>Qty: </h4>
-                        <div className="ui small input">
-                            <input
-                                type="number"
-                                onChange={handlePopcornQty}
-                                value={popcornQty}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <h3>Candy</h3>
-                        <h4>Price: $2.00</h4>
-                        <div className="ui field">
-                            <select
-                                name="candy-type"
-                                onChange={handleCandySelect}
-                                value={candySelect}>
-                                <option value="junior-mints">Junior Mints</option>
-                                <option value="whoppers">Whoppers</option>
-                                <option value="dots">Dots</option>
-                                <option value="twizzlers">Twizzlers</option>
-                                <option value="m-and-m">M&M</option>
-                                <option value="mike-and-ike">Mike & Ike</option>
-                            </select>
-                        </div>
-                        <h4>Qty: </h4>
-                        <div className="ui small input">
-                            <input
-                                type="number"
-                                onChange={handleCandyQty}
-                                value={candyQty}
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <h3>Soda</h3>
-                        <h4>Price: $2.50</h4>
-
-                        <div>
-                            <select
-                                name="type"
-                                onChange={handleSodaSelect}
-                                value={sodaSelect}>
-                                <option value="coca-cola">Coca Cola</option>
-                                <option value="root-beer">Root Beer</option>
-                                <option value="sprite">Sprite</option>
-                                <option value="mountain-dew">Mountain Dew</option>
-                                <option value="fanta">Fanta</option>
-                                <option value="dr-pepper">Dr Pepper</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <h4>Qty: </h4>
-                    <div className="ui small input">
-                        <input
-                            type="number"
-                            onChange={handleSodaQty}
-                            value={sodaQty}
-                        />
-                    </div> */}
                     <h2>Total: ${(Math.round(total * 100) / 100).toFixed(2)}</h2>
-                    {/* <button className="ui positive button">Place Order</button> */}
                     {seeThankYou
                         ? <h1 id="see-thanks" className="ui header">Thank you for your order!</h1>
                         : <button className="ui positive button">Place Order</button>

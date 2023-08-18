@@ -17,7 +17,6 @@ function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreC
                 genreChoice={genreChoice}
                 setGenreChoice={setGenreChoice}
             />
-
             {
                 movies.length
                     ?

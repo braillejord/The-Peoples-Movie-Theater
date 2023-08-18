@@ -45,6 +45,7 @@ function SelectedMovie({ moviesUrl }) {
     }
 
 
+    // Modal Code
     const customStyles = {
         content: {
             top: '50%',
@@ -56,7 +57,6 @@ function SelectedMovie({ moviesUrl }) {
         },
     };
 
-    // Modal Code
     const [modalIsOpen, setIsOpen] = useState(false);
 
     function openModal() {
@@ -66,6 +66,7 @@ function SelectedMovie({ moviesUrl }) {
     function closeModal() {
         setIsOpen(false);
     }
+    // Modal Code
 
 
     return (

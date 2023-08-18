@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Search({ movies, setMovieList, searchInput, setSearchInput }) {
+function Search({ setSearchInput }) {
 
 	return (
 		<div className="ui search">

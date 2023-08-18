@@ -1,6 +1,6 @@
 import React from "react";
 
-function GenreDropdown({ genreChoice, setGenreChoice }) {
+function GenreDropdown({ setGenreChoice }) {
 
     return (
         <>

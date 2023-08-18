@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 
-function SingleMovie({ description, genre, id, image, rating, ticketPrice, title }) {
+function SingleMovie({ id, image, rating, title }) {
     return (
         <Link to={`/${id}`} className="singleMovie">
             <span data-tooltip={title + "  |  " + rating} data-position="bottom center">
