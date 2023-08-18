@@ -79,6 +79,11 @@ img.ui.small.image:hover {
 #menu {
   background-color: goldenrod !important;
   padding: 0.4em;
+  margin-bottom: 0.4em !important;
+}
+
+.ui.secondary.menu {
+  margin: 0 !important;
 }
 
 p {
@@ -132,4 +137,8 @@ button.ui.positive.button {
 
 #see-thanks {
   color: #21ba45;
+}
+
+#we-choose {
+  margin: 0;
 }

@@ -7,8 +7,6 @@ function SecondaryNavbar({ movies, setMovieList, searchInput, setSearchInput, ge
         <div className="ui secondary menu">
             <a className="item">
                 <GenreDropdown
-                    movies={movies}
-                    setMovieList={setMovieList}
                     genreChoice={genreChoice}
                     setGenreChoice={setGenreChoice}
                 />
