@@ -124,7 +124,6 @@ function SelectedMovie({ moviesUrl }) {
                         ? <h1 id="see-order" className="ui header">See order below!</h1>
                         : <h1 id="see-order" className="ui header"></h1>
                     }
-
                 </div>
             </div>
             <Order

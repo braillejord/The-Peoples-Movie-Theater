@@ -8,6 +8,7 @@ function Order({ selected, ticketQuantity }) {
     const [candyQty, setCandyQty] = useState(0)
     const [sodaSelect, setSodaSelect] = useState('')
     const [sodaQty, setSodaQty] = useState(0)
+    const [seeThankYou, setSeeThankYou] = useState(false)
 
     const handlePopcornSelect = (e) => setPopcornSelect(e.target.value)
     const handlePopcornQty = (e) => setPopcornQty(e.target.value)
@@ -18,16 +19,16 @@ function Order({ selected, ticketQuantity }) {
 
     const total = ((ticketQuantity * selected.ticketPrice) + (sodaQty * 2.5) + (popcornQty * 3) + (candyQty * 2))
 
-    const handleOrderSubmit = (e) => {
-        return <div>
-
-        </div>
+    function handleOrderSubmit(e) {
+        e.preventDefault();
+        setSeeThankYou(true);
+        console.log("Ouch")
     }
 
     return (
         <>
             <h1 className="ui center aligned block header">My Order</h1>
-            <form className="ui form" onSubmit={handleOrderSubmit} >
+            <form className="ui form" onSubmit={(e) => handleOrderSubmit(e)} >
                 <div className="ui container">
                     <div>
                         <h2>~ Tickets ~</h2>
@@ -190,7 +191,11 @@ function Order({ selected, ticketQuantity }) {
                         />
                     </div> */}
                     <h2>Total: ${(Math.round(total * 100) / 100).toFixed(2)}</h2>
-                    <button className="ui positive button">Place Order</button>
+                    {/* <button className="ui positive button">Place Order</button> */}
+                    {seeThankYou
+                        ? <h1 id="see-thanks" className="ui header">Thank you for your order!</h1>
+                        : <button className="ui positive button">Place Order</button>
+                    }
                 </div>
             </form >
         </>
