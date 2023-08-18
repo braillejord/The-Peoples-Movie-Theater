@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Modal from 'react-modal';
 
 function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
     const [selected, setSelected] = useState({})
@@ -43,6 +44,30 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
             .then(setEditOn(!editOn))
     }
 
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        },
+    };
+
+    // Modal Code
+    const [modalIsOpen, setIsOpen] = useState(false);
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
+
+
     return (
         <>
             <div className="ui two column grid container">
@@ -50,7 +75,20 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                     <img className="ui image selected-img" src={selected.image} />
                 </div>
                 <div className="column">
-                    <h1>{selected.title}</h1>
+                    <h1 className="selected-title">{selected.title}</h1>
+
+                    <div>
+                        <button id="trailerButton" className="ui mini button" onClick={openModal}>Play Trailer</button>
+                        <Modal
+                            isOpen={modalIsOpen}
+                            onRequestClose={closeModal}
+                            contentLabel="Example Modal"
+                            style={customStyles}
+                        >
+                            <iframe width="800" height="500" src={selected.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </Modal>
+                    </div>
+
                     <p>{selected.description}</p>
                     <p><strong>Rating: </strong>{selected.rating}</p>
                     {selected.genre
