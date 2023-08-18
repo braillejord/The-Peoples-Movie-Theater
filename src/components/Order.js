@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 function Order({ selected, ticketQuantity }) {
 
-    console.log(selected)
-
     const [popcornSelect, setPopcornSelect] = useState('')
     const [popcornQty, setPopcornQty] = useState(0)
     const [candySelect, setCandySelect] = useState('')

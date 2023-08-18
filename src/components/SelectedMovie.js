@@ -24,11 +24,6 @@ function SelectedMovie({ moviesUrl }) {
         e.preventDefault();
         const quantity = e.target[0].value
         setTicketQuantity(quantity)
-        // const newTickets = {
-        //     title: parseInt(id),
-        //     quantity: parseInt(ticketQuantity)
-        // }
-        // setTicketOrder([...ticketOrder, newTickets])
         e.target.reset()
     }
 
@@ -88,7 +83,7 @@ function SelectedMovie({ moviesUrl }) {
                             contentLabel="Example Modal"
                             style={customStyles}
                         >
-                            <iframe width="800" height="500" src={selected.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe width="800" height="500" src={selected.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </Modal>
                     </div>
 
