@@ -113,3 +113,11 @@ h1.now-playing {
 .selected-img {
   height: 50em;
 }
+
+#trailerButton {
+  margin: 0 0 1em;
+}
+
+.selected-title {
+  font-size: xx-large;
+}
