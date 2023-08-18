@@ -1,19 +1,11 @@
 import React from "react";
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 import SecondaryNavbar from "./SecondaryNavbar";
 import SingleMovie from "./SingleMovie";
 
 function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreChoice, setGenreChoice }) {
 
-    let allMovies = movies.map((movie) => (
-        <SingleMovie
-            key={movie.id}
-            {...movie}
-        />
-    ))
-
-    if (movies.length === 0) {
-        allMovies = <h1>No Results Found</h1>
-    }
+    const [parent] = useAutoAnimate()
 
     return (
         <>
@@ -25,9 +17,28 @@ function MainContent({ movies, setMovieList, searchInput, setSearchInput, genreC
                 genreChoice={genreChoice}
                 setGenreChoice={setGenreChoice}
             />
-            <div className="ui centered grid">
-                {allMovies}
-            </ div>
+
+            {
+                movies.length
+                    ?
+                    <>
+                        <h1 className="now-playing">Now Playing</h1>
+                        <div className="ui centered grid" ref={parent}>
+                            {movies.map((movie) => (
+                                <SingleMovie
+                                    className="single-movie"
+                                    key={movie.id}
+                                    {...movie}
+                                />
+                            ))}
+                        </ div>
+                    </>
+                    :
+                    <div className="ui header centered">
+                        <h1 className="no-results">No Results Found</h1>
+                    </div>
+            }
+
         </>
     );
 }

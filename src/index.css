@@ -24,26 +24,92 @@ code {
 }
 
 .ui.small.image {
-  padding: 1em 0;
+  margin: 1em 0;
+  max-height: 222px;
+}
+
+.image {
+  filter: drop-shadow(10px 10px 10px black);
 }
 
 .order-button-container {
   padding-top: 1em;
 }
 
-/* html * {
-  background-color: #301934 !important;
-} */
-
-/* .item-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 10px;
-  border: 1px solid black;
+body {
+  /* background-color: #301934 !important; */
+  background-image: url(https://media.istockphoto.com/id/1273929462/photo/purple-defocused-blurred-motion-abstract-background.webp?b=1&s=170667a&w=0&k=20&c=YbaYi00O7A07AVuFpvSH1-VjcVg37HduYExjsXW2ESM=) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
 }
 
-.item-label {
-  font-weight: 600;
-  margin-right: 8px;
-} */
+html *:not(h1.title) {
+  font-family: 'Bricolage Grotesque', sans-serif !important;
+}
+
+label,
+div.column,
+button.ui.labeled.mini.button {
+  color: white !important;
+}
+
+label.ui.label {
+  color: black !important;
+}
+
+.header-link {
+  color: black;
+  font-size: initial;
+}
+
+.header-link:hover {
+  color: white;
+}
+
+.no-results {
+  color: white;
+}
+
+img.ui.small.image:hover {
+  border-style: solid;
+  border-color: goldenrod;
+}
+
+#menu {
+  background-color: goldenrod !important;
+  padding: 0.4em;
+}
+
+p {
+  font-size: medium;
+}
+
+p.ticket-quantity {
+  margin: 0;
+}
+
+h1.title {
+  font-size: xx-large;
+  font-family: 'Rye', cursive;
+  padding: 0.1em 0.3em 0 0;
+}
+
+div.ui.two.column.grid.container {
+  height: 100% !important;
+}
+
+h1.ui.center.aligned.header {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+h1.now-playing {
+  color: white;
+  margin-left: 1em;
+}
+
+.selected-img {
+  height: 50em;
+}

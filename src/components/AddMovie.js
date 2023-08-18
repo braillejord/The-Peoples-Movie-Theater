@@ -28,7 +28,7 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
 
     return (
         <>
-            <h1 className="ui center aligned block header">Add a Movie 🍿</h1>
+            <h1 className="ui center aligned block header">Add a Movie</h1>
             <form className="ui container form" onSubmit={(e) => submitMovieForm(e)}>
                 <div className="two fields">
                     <div className="required field">
@@ -70,7 +70,7 @@ function AddMovie({ movies, moviesUrl, setMovieList }) {
                     <label>Movie Description</label>
                     <textarea></textarea>
                 </div>
-                <button className="ui button" type="submit">Add Movie 🎥</button>
+                <button className="ui black button" type="submit">Add Movie</button>
             </form >
         </>
     );

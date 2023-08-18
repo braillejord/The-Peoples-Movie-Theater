@@ -47,7 +47,7 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
         <>
             <div className="ui two column grid container">
                 <div className="column">
-                    <img className="ui image" src={selected.image} />
+                    <img className="ui image selected-img" src={selected.image} />
                 </div>
                 <div className="column">
                     <h1>{selected.title}</h1>
@@ -75,16 +75,13 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             <button className="ui mini labeled button" onClick={() => setEditOn(!editOn)}>Edit Price</button>
                         </p>
                     }
-                    <label><strong>Ticket Quantity: </strong></label>
+                    <p className="ticket-quantity"><strong>Ticket Quantity: </strong></p>
                     <form className="ui form" onSubmit={(e) => submitOrderForm(e)}>
                         <div className="ui small input">
                             <input type="number" />
                         </div>
                         <div className="order-button-container">
-                            <button className="ui labeled icon button">
-                                <i className="plus icon"></i>
-                                Add to Order
-                            </button>
+                            <button className="ui black button">Add to Order</button>
                         </div>
                     </form>
                 </div>
