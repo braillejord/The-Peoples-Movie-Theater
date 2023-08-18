@@ -42,7 +42,7 @@ Open your web browser and navigate to `http://localhost:3000` to begin using The
 
 - **React Router:** Incorporated React Router for smooth navigation within the app.
 
-- **Styled Components:** Styled components using CSS-in-JS for a coherent design.
+- **Styled Components:** Styled components using Semantic UI for a coherent design.
 
 ## Contributing
 
