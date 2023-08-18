@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Order from "./Order";
 
 function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
     const [selected, setSelected] = useState({})
+    const [ticketQuantity, setTicketQuantity] = useState(0)
     const { id } = useParams()
 
     useEffect(() => {
@@ -13,7 +15,7 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
 
     function submitOrderForm(e) {
         e.preventDefault();
-        const ticketQuantity = e.target[0].value
+        setTicketQuantity(e.target[0].value)
         const newTickets = {
             title: parseInt(id),
             quantity: parseInt(ticketQuantity)
@@ -43,7 +45,8 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             <input type="number" />
                         </div>
                         <div className="order-button-container">
-                            <button className="ui labeled icon button">
+                            <button 
+                                className="ui labeled icon button">
                                 <i className="plus icon"></i>
                                 Add to Order
                             </button>
@@ -51,6 +54,9 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                     </form>
                 </div>
             </div>
+            <Order selected={selected} 
+            ticketOrder={ticketOrder} 
+            ticketQuantity={ticketQuantity}/>
         </>
     );
 }

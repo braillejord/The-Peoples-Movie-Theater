@@ -1,6 +1,6 @@
 import React from "react";
 import SingleMovie from "./SingleMovie";
-import { Switch, Route } from "react-router-dom";
+//import { Switch, Route } from "react-router-dom";
 import SelectedMovie from "./SelectedMovie";
 
 function MainContent({ movies }) {
