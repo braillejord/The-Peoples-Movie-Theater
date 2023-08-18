@@ -13,7 +13,6 @@ function App() {
   const [movieList, setMovieList] = useState([])
   const [searchInput, setSearchInput] = useState("")
   const [genreChoice, setGenreChoice] = useState("All")
-  const [ticketOrder, setTicketOrder] = useState([])
 
   useEffect(() => {
     fetch(moviesUrl)
@@ -40,16 +39,16 @@ function App() {
             setMovieList={setMovieList}
           />
         </Route>
-        <Route path="/order-details">
+        {/* <Route path="/order-details">
           <Order
             ticketOrder={ticketOrder}
           />
-        </Route>
+        </Route> */}
         <Route path="/:id">
           <SelectedMovie
             moviesUrl={moviesUrl}
-            ticketOrder={ticketOrder}
-            setTicketOrder={setTicketOrder}
+          // ticketOrder={ticketOrder}
+          // setTicketOrder={setTicketOrder}
           />
         </Route>
         <Route exact path="/">

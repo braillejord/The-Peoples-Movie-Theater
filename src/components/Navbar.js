@@ -12,9 +12,9 @@ function NavBar() {
                 <a className="item">
                     <NavLink className="header-link" exact to="/add-movie">Add a Movie</NavLink>
                 </a>
-                <a className="item">
+                {/* <a className="item">
                     <NavLink className="header-link" exact to="/order-details">My Order</NavLink>
-                </a>
+                </a> */}
                 <div className="right menu">
                     <h1 className="title">The People's Movie Theater</h1>
                 </div>

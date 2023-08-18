@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Order from "./Order";
 import Modal from 'react-modal';
 
-function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
+function SelectedMovie({ moviesUrl }) {
     const [selected, setSelected] = useState({})
     const [editOn, setEditOn] = useState(false)
     const [newPrice, setNewPrice] = useState()
+    const [ticketQuantity, setTicketQuantity] = useState(0)
+    const [seeOrder, setSeeOrder] = useState(false)
     const { id } = useParams()
 
     function fetchMovie() {
@@ -20,12 +23,9 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
 
     function submitOrderForm(e) {
         e.preventDefault();
-        const ticketQuantity = e.target[0].value
-        const newTickets = {
-            title: parseInt(id),
-            quantity: parseInt(ticketQuantity)
-        }
-        setTicketOrder([...ticketOrder, newTickets])
+        const quantity = e.target[0].value
+        setTicketQuantity(quantity)
+        setSeeOrder(true)
         e.target.reset()
     }
 
@@ -76,7 +76,6 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                 </div>
                 <div className="column">
                     <h1 className="selected-title">{selected.title}</h1>
-
                     <div>
                         <button id="trailerButton" className="ui mini button" onClick={openModal}>Play Trailer</button>
                         <Modal
@@ -85,10 +84,9 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             contentLabel="Example Modal"
                             style={customStyles}
                         >
-                            <iframe width="800" height="500" src={selected.trailer} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe width="800" height="500" src={selected.trailer} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </Modal>
                     </div>
-
                     <p>{selected.description}</p>
                     <p><strong>Rating: </strong>{selected.rating}</p>
                     {selected.genre
@@ -122,8 +120,16 @@ function SelectedMovie({ moviesUrl, ticketOrder, setTicketOrder }) {
                             <button className="ui black button">Add to Order</button>
                         </div>
                     </form>
+                    {seeOrder
+                        ? <h1 id="see-order" className="ui header">See order below!</h1>
+                        : <h1 id="see-order" className="ui header"></h1>
+                    }
                 </div>
             </div>
+            <Order
+                selected={selected}
+                ticketQuantity={ticketQuantity}
+            />
         </>
     );
 }

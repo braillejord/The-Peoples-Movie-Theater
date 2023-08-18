@@ -121,3 +121,15 @@ h1.now-playing {
 .selected-title {
   font-size: xx-large;
 }
+
+button.ui.positive.button {
+  margin-bottom: 1em !important;
+}
+
+#see-order {
+  color: goldenrod;
+}
+
+#see-thanks {
+  color: #21ba45;
+}
