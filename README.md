@@ -45,11 +45,3 @@ Open your web browser and navigate to `http://localhost:3000` to begin using The
 - **React Router:** Incorporated React Router for smooth navigation within the app.
 
 - **Styled Components:** Styled components using Semantic UI for a coherent design.
-
-## Contributing
-
-Contributions from the community are greatly appreciated! If you'd like to contribute to The People's Movie Theater, please adhere to our [contribution guidelines](CONTRIBUTING.md).
-
-## License
-
-This project operates under the [MIT License](LICENSE).
