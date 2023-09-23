@@ -2,8 +2,6 @@
 
 Welcome to The People's Movie Theater! This is a React-based web application that allows users to browse, select, and book movie tickets. Enjoy a seamless movie booking experience with a focus on simplicity and convenience.
 
-![landing-page](https://github.com/braillejord/phase-2-project-frontend/assets/43306719/1f685d68-6cb8-441e-91ac-9331258f0f03)
-
 ## Features
 
 - **Browse Movies:** Explore an extensive collection of movies, each complete with details such as title, genre, description, and ratings.
